@@ -23,6 +23,9 @@ const Body = styled.div`
   background-color: wheat;
   grid-column: 1/-1;
   grid-row: 2/6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const Footer = styled.div`
   background-color: tomato;
@@ -35,6 +38,25 @@ const Logo = styled.span`
   font-size: 70px;
   color: white;
 `;
+const Box = styled.div`
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+`;
+const Todo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  &:hover {
+    button {
+      color: white;
+      transform: rotateZ("30");
+    }
+  }
+`;
 function App() {
   return (
     <>
@@ -43,7 +65,12 @@ function App() {
           <Logo>Holy</Logo>
         </Header>
         <Body>
-          <Clock />
+          <Box>
+            <Todo>
+              <span>hello</span>
+              <button>X</button>
+            </Todo>
+          </Box>
         </Body>
         <Footer></Footer>
       </Container>
