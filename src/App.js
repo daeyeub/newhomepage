@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Clock from "./components/Clock";
+import Schedule from "./components/Schedule";
 
 const Container = styled.div`
   width: 100%;
@@ -14,13 +15,11 @@ const Container = styled.div`
 `;
 const Header = styled.div`
   box-sizing: border-box;
-  background-color: teal;
   grid-column: 1/-1;
   grid-row: 1/2;
   padding: 5px 20px;
 `;
 const Body = styled.div`
-  background-color: wheat;
   grid-column: 1/-1;
   grid-row: 2/6;
   display: flex;
@@ -28,7 +27,6 @@ const Body = styled.div`
   align-items: center;
 `;
 const Footer = styled.div`
-  background-color: tomato;
   grid-column: 1/-1;
   grid-row: 6/7;
 `;
@@ -41,7 +39,6 @@ const Logo = styled.span`
 const Box = styled.div`
   width: 500px;
   height: 500px;
-  background-color: white;
   border-radius: 30px;
   padding: 20px;
 `;
@@ -50,12 +47,6 @@ const Todo = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid black;
-  &:hover {
-    button {
-      color: white;
-      transform: rotateZ("30");
-    }
-  }
 `;
 function App() {
   return (
@@ -65,12 +56,7 @@ function App() {
           <Logo>Holy</Logo>
         </Header>
         <Body>
-          <Box>
-            <Todo>
-              <span>hello</span>
-              <button>X</button>
-            </Todo>
-          </Box>
+          <Schedule />
         </Body>
         <Footer></Footer>
       </Container>
