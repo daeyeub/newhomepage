@@ -1,3 +1,5 @@
+import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import styled from "styled-components";
 import Clock from "./components/Clock";
 import Schedule from "./components/Schedule";
@@ -18,6 +20,8 @@ const Header = styled.div`
   grid-column: 1/-1;
   grid-row: 1/2;
   padding: 5px 20px;
+  display: flex;
+  justify-content: space-around;
 `;
 const Body = styled.div`
   grid-column: 1/-1;
@@ -48,16 +52,28 @@ const Todo = styled.div`
   align-items: center;
   border-bottom: 2px solid black;
 `;
+const Boxes = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+`;
+const Button = styled.button``;
 function App() {
+  const [value, setValue] = useState(false);
+  const onClick = () => {
+    setValue((prev) => !prev);
+  };
+  console.log(value);
   return (
     <>
       <Container>
         <Header>
           <Logo>Holy</Logo>
+          <Button onClick={onClick}>click</Button>
+          <AnimatePresence>{value ? <Boxes></Boxes> : null}</AnimatePresence>
         </Header>
-        <Body>
-          <Schedule />
-        </Body>
+        <Body>{/* <Schedule /> */}</Body>
         <Footer></Footer>
       </Container>
     </>
