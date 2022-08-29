@@ -3,6 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Clock from "./components/Clock";
 import Schedule from "./components/Schedule";
+import ToDoList from "./components/ToDoList";
 
 const Container = styled.div`
   width: 100%;
@@ -64,16 +65,16 @@ function App() {
   const onClick = () => {
     setValue((prev) => !prev);
   };
-  console.log(value);
   return (
     <>
       <Container>
         <Header>
-          <Logo>Holy</Logo>
+          <Logo>Logo</Logo>
           <Button onClick={onClick}>click</Button>
-          <AnimatePresence>{value ? <Boxes></Boxes> : null}</AnimatePresence>
         </Header>
-        <Body>{/* <Schedule /> */}</Body>
+        <Body>
+          <ToDoList />
+        </Body>
         <Footer></Footer>
       </Container>
     </>
